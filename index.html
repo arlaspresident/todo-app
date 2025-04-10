@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Att göra lista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Att göra lista</h1>
+
+  <form id="todo-form">
+    <input type="text" id="task" placeholder="Ny uppgift" required />
+    <input type="number" id="priority" placeholder="Prioritet (1-3)" min="1" max="3" required />
+    <button type="submit">Lägg till</button>
+  </form>
+
+  <div id="todo-list"></div>
+
+  <script type="module" src="main.ts"></script>
+</body>
+</html>
