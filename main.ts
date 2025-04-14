@@ -32,9 +32,12 @@ function renderTodos() {
     const todoItem = document.createElement("div");
     todoItem.className = `todo-item ${todo.completed ? "completed" : ""}`;
     todoItem.innerHTML = `
-      <span>${todo.task} (Prioritet: ${todo.priority})</span>
-      ${!todo.completed ? `<button data-index="${index}">Markera klar</button>` : ""}
-    `;
+  <span>
+    ${todo.task} (Prioritet: ${todo.priority})<br>
+    <small>Skapad: ${new Date(todo.createdAt).toLocaleString()}</small>
+  </span>
+  ${!todo.completed ? `<button data-index="${index}">Markera klar</button>` : ""}
+`;
 
     if (!todo.completed) {
       const button = todoItem.querySelector("button")!;

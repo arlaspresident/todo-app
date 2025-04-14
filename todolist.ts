@@ -11,17 +11,19 @@ export class TodoList {
     if (!task.trim() || priority < 1 || priority > 3) {
       return false;
     }
-
+  
     const newTodo: Todo = {
       task,
       completed: false,
-      priority
+      priority,
+      createdAt: new Date().toISOString() 
     };
-
+  
     this.todos.push(newTodo);
     this.saveToLocalStorage();
     return true;
   }
+  
 
   markTodoCompleted(todoIndex: number): void {
     if (todoIndex >= 0 && todoIndex < this.todos.length) {
